@@ -120,7 +120,7 @@
     .mobile-only header.logo,
     .mobile-only .nav-mobile {
       display: inline-block;
-      width: 51%;
+      width: 210px;
       padding: 15px;
       text-align: center;
       vertical-align: middle;
@@ -175,7 +175,7 @@
 
     footer{
         margin-top: 10px;
-        width: 402px;
+        width: 410px;
     }
   }
     
