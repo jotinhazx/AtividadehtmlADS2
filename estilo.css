@@ -1,181 +1,68 @@
-/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    background: #f1f1f1;
-  }
-  
-  /* Container Geral do Desktop */
-  .container-desktop {
-    display: grid;
-    grid-template-areas:
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
       "logo logo"
       "sidebar banner"
       "sidebar body"
       "footer footer";
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: auto auto 1fr auto;
-    min-height: 100vh;
-    gap: 10px;
-    padding: 10px;
-  }
-  
-  /* Componentes do Desktop */
-  .logo {
-    grid-area: logo;
-    background: #00BCD4;
-    color: #fff;
-    padding: 20px;
-    text-align: left;
-  }
-  
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+  padding: 10px;
+  height: 100vh;
+}
+
+.logo {
+  grid-area: logo;
+  background: #0caccc;
+  padding: 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #0caccc;
+  padding: 10px;
+}
+
+.banner {
+  grid-area: banner;
+  background: #0caccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  grid-area: body;
+  background: #0caccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  grid-area: footer;
+  background: #0caccc;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 900px) {
   .sidebar {
-    grid-area: sidebar;
-    background: #ccc;
-    padding: 20px;
-  }
-  
-  .banner {
-    grid-area: banner;
-    background: #bbb;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .body-area {
-    grid-area: body;
-    background: #817979;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
+    height: 100vh; /* altura total da tela */
     display: flex;
-  }
-  
-  footer {
-    grid-area: footer;
-    background: #00BCD4;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  /* Versão Mobile */
-  /* Por padrão, vamos esconder a versão mobile em telas maiores */
-  .mobile-only {
-    display: none;
-  }
-  
-  /* Estilização mobile (grade com 16 imagens e boxes) */
-  .nav-mobile {
-    background: #ccc;
-    padding: 15px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
-  
-  .grid-imagens {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas para exibir 16 imagens (4x4) */
-    gap: 5px;
-    padding: 10px;
-  }
-  
-  .grid-imagens img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    object-fit: cover;
-  }
-  
-  .box-area {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-    background: #fff;
-  }
-  
-  .box-area .box {
-    background: #ddd;
-    padding: 15px;
-    text-align: center;
-    border-radius: 4px;
-  }
-  
-  @media (max-width: 768px) {
-    /* Esconde a versão desktop e mostra a mobile */
-    .desktop-only {
-      display: none;
-    }
-  
-    .mobile-only {
-      display: block;
-    }
-  
-    /* LOGO + NAVEGAÇÃO EM LINHA */
-    .mobile-only header.logo,
-    .mobile-only .nav-mobile {
-      display: inline-block;
-      width: 210px;
-      padding: 15px;
-      text-align: center;
-      vertical-align: middle;
-    }
-  
-    .mobile-only header.logo {
-      background: #00BCD4;
-      color: white;
-      margin-top: 50px;
-    }
-
-    .nav-mobile {
-      background: #00BCD4;
-      color: white;
-      margin-left: 199px;
-      margin-top: -69px;
-    }
-  
-    /* BOXES EM LINHA */
-    .box-area {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px;
-    }
-  
-    .box-area .box {
-      flex: 1;
-      background: #ddd;
-      padding: 15px;
-      text-align: center;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-  
-    /* GRADE DE IMAGENS */
-    .grid-imagens {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-      padding: 10px;
-      margin-top: 10px;
-    }
-  
-    .grid-imagens img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      object-fit: cover;
-    }
-
-    footer{
-        margin-top: 10px;
-        width: 410px;
-    }
-  }
-    
+}

@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f1f1f1;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "logo nav"
+    "grid grid"
+    "boxes boxes"
+    "footer footer";
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Logo */
+.logo {
+  grid-area: logo;
+  background: #00BCD4;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+/* Navegação */
+.nav {
+  grid-area: nav;
+  background: #00BCD4;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  margin-left: -10px;
+}
+
+/* Grade de imagens - 4x4 sempre */
+.grid-imagens {
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+.grid-imagens img {
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-left: 100px;
+}
+
+/* Boxes */
+.boxes {
+  grid-area: boxes;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+}
+
+.box {
+  flex: 1;
+  background: #ddd;
+  padding: 25px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+/* Rodapé */
+footer {
+  grid-area: footer;
+  background: #00BCD4;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* 📱 MEDIA QUERY */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "logo nav"
+      "grid grid"
+      "boxes boxes"
+      "footer footer";
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+  }
+
+  .logo,
+  .nav {
+    font-size: 1rem;
+    padding: 10px;
+    margin-left: -15px;
+  }
+
+  /* MANTÉM 4 COLUNAS NA GRID */
+  .grid-imagens {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-imagens img {
+    height: 100px;
+    margin-left: 50px;
+  }
+
+  /* Boxes lado a lado */
+  .boxes {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .box {
+    flex: 1 1 30%;
+    min-width: 100px;
+    font-size: 1rem;
+  }
+}
